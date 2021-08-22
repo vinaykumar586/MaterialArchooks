@@ -4,13 +4,18 @@ import Theme from "./ui/Theme";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 
 import Header from "./ui/Header";
+import Footer from "./ui/Footer";
 function App() {
   return (
     <ThemeProvider theme={Theme}>
       <BrowserRouter>
         <Header />
         <Switch>
-          <Route exact path="/" component={() => <div>Home</div>} />
+          <Route
+            exact
+            path="/"
+            component={() => <div style={{ height: "650px" }}>Home</div>}
+          />
           <Route exact path="/services" component={() => <div>Services</div>} />
           <Route
             exact
@@ -40,6 +45,7 @@ function App() {
           />
           <Route exact path="/estimate" component={() => <div>Estimate</div>} />
         </Switch>
+        <Footer />
       </BrowserRouter>
     </ThemeProvider>
   );
